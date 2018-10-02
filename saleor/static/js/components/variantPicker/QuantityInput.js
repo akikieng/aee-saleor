@@ -18,7 +18,9 @@ export default class QuantityInput extends Component {
       'product__info__quantity': true
     });
     return (
-      <div className={formGroupClasses}>
+      <div className={formGroupClasses}
+           style={{"display":"none"}}
+      >
         <label className="control-label product__variant-picker__label" htmlFor="id_quantity">{pgettext('Add to cart form field label', 'Quantity')}</label>
         <input
           className="form-control"
@@ -29,7 +31,6 @@ export default class QuantityInput extends Component {
           name="quantity"
           onChange={this.props.handleChange}
           type="number"
-          style={{"display":"none"}}
         />
         {errors && (
           <span className="help-block">{errors.join(' ')}</span>

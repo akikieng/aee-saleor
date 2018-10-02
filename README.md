@@ -10,6 +10,8 @@ Moved to saleor from django-oscar after oscar's open issues
   - [ ace-han comment on Jun 19](https://github.com/django-oscar/django-oscar/issues/675#issuecomment-398478730) pointed me in saleor's direction
   - sign of a bit of technical debt?
 
+Fork was from master branch around commit ae91ff4 (i.e. after tag `v2018.08`)
+
 
 ## Installation
 
@@ -18,3 +20,8 @@ Moved to saleor from django-oscar after oscar's open issues
 2. `cp manage.sh.dist manage.sh` and modify as needed
 
 3. replace all usage of `./manage.py ...` with `./manage.sh ...`
+
+
+## Changelog
+
+Check [[CHANGELOG.md]]

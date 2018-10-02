@@ -20,7 +20,20 @@
         </div>
         <div class="panel-footer">
           {% if availability.available %}
-            {% price_range availability.price_range %}
+            {% with product.get_quantity_available as quantity_available %}
+            <div>
+            {% if request.user.is_staff %}
+              {{product.get_quantity_available}} unit{{quantity_available|pluralize}}
+            {% else %}
+              {% if quantity_available  == 1 %}
+              Last piece
+              {% elif quantity_available <= 3 %}
+              {{product.get_quantity_available}} unit{{quantity_available|pluralize}}
+              {% endif %}
+            {% endif %}
+            </div>
+            {% endwith %}
+            <div>{% price_range availability.price_range %}</div>
             {% if availability.discount %}
               {% if availability.price_range_undiscounted.start != availability.price_range.start %}
                 <div class="product-list__sale">
@@ -33,7 +46,7 @@
               {% endif %}
             {% endif %}
           {% else %}
-            &nbsp;
+            <div class="alert alert-warning">Out of stock</div>
           {% endif %}
         </div>
       </div>

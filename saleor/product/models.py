@@ -183,6 +183,9 @@ class Product(SeoModel):
         price = apply_tax_to_price(taxes, tax_rate, price)
         return TaxedMoneyRange(start=price, stop=price)
 
+    def get_quantity_available(self):
+      return sum(variant.quantity_available for variant in self)
+
 
 class ProductTranslation(SeoModelTranslation):
     language_code = models.CharField(max_length=10)
