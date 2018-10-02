@@ -6,6 +6,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.views import serve
 from django.views.decorators.csrf import csrf_exempt
 from django.views.i18n import JavaScriptCatalog, set_language
+from django.contrib import admin
 
 from .account.urls import urlpatterns as account_urls
 from .checkout.urls import (
@@ -52,6 +53,10 @@ translatable_urlpatterns = [
 
 urlpatterns = non_translatable_urlpatterns + i18n_patterns(
     *translatable_urlpatterns)
+
+# append admin
+urlpatterns += [
+    url(r'^admin/', admin.site.urls)]
 
 if settings.DEBUG:
     import debug_toolbar

@@ -187,6 +187,7 @@ INSTALLED_APPS = [
     'storages',
 
     # Django modules
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
