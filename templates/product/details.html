@@ -198,7 +198,7 @@
       </div>
       <hr>
       <table>
-        <!-- product attributes (as opposed to variant attributes -->
+        <!-- product attributes (as opposed to variant attributes) -->
         {% for attribute, value in product_attributes.items %}
           <tr>
             <td>{{ attribute.translated }}:</td>
@@ -206,6 +206,31 @@
           </tr>
         {% endfor %}
       </table>
+      {% if request.user.is_staff %}
+      <hr>
+      <table>
+        <!-- variant attributes (as opposed to product attributes) -->
+        {% for va_i, va_a in variant_attributes.items %}
+          <!--
+          <tr>
+            <td colspan="2"><em>{{va_i}}</em></td>
+          </tr>
+          -->
+        {% for attribute, value in va_a.items %}
+          <tr>
+            <td>{{ attribute.translated }}:</td>
+            <td><strong>{{ value.translated }}</strong></td>
+          </tr>
+        {% endfor %}
+          <tr>
+            <td>Qty available:</td>
+            <td><strong>{{va_i.quantity_available}}</strong></td>
+          </tr>
+          <tr><td colspan=2><hr/></td></tr>
+        {% endfor %}
+      </table>
+      {% endif %}
+
     </div>
   </div>
 {% endblock content %}

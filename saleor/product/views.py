@@ -15,7 +15,7 @@ from .utils import (
     collections_visible_to_user, get_product_images, get_product_list_context,
     handle_cart_form, products_for_cart, products_for_products_list,
     products_with_details)
-from .utils.attributes import get_product_attributes_data
+from .utils.attributes import get_product_attributes_data, get_variant_attributes_data
 from .utils.availability import get_availability
 from .utils.variants_picker import get_variant_picker_data
 
@@ -66,6 +66,7 @@ def product_details(request, slug, product_id, form=None):
     variant_picker_data = get_variant_picker_data(
         product, request.discounts, request.taxes, request.currency)
     product_attributes = get_product_attributes_data(product)
+    variant_attributes = get_variant_attributes_data(product)
     # show_variant_picker determines if variant picker is used or select input
     show_variant_picker = all([v.attributes for v in product.variants.all()])
     json_ld_data = product_json_ld(product, product_attributes)
@@ -75,6 +76,7 @@ def product_details(request, slug, product_id, form=None):
         'availability': availability,
         'product': product,
         'product_attributes': product_attributes,
+        'variant_attributes': variant_attributes,
         'product_images': product_images,
         'show_variant_picker': show_variant_picker,
         'variant_picker_data': json.dumps(

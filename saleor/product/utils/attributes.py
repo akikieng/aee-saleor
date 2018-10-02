@@ -3,12 +3,37 @@ def get_product_attributes_data(product):
     as dict of Attribute: AttributeValue values.
     """
     attributes = product.product_type.product_attributes.all()
+    return get_xxx_attributes_data(product, attributes)
+
+
+def get_variant_attributes_data(product):
+    """Same as get_product_attributes_data but for variants
+
+    Test with `./manage.sh shell < tests/test_product_utils.py`
+    """
+    attributes = product.product_type.variant_attributes.all()
+    return get_xxx_attributes_data(product, attributes, for_variant=True)
+
+
+def get_xxx_attributes_data(product, attributes, for_variant=False):
     attributes_map = {
         attribute.pk: attribute.translated for attribute in attributes}
-    values_map = get_attributes_display_map(product, attributes)
-    return {
+
+    def get_single(values_map):
+      return {
         attributes_map[attr_pk]: value_obj.translated
         for (attr_pk, value_obj) in values_map.items()}
+
+    if not for_variant:
+      values_map = get_attributes_display_map(product, attributes)
+      return get_single(values_map)
+
+    out = {}
+    for v in product.variants.all():
+      values_map = get_attributes_display_map(v, attributes)
+      out[v] = get_single(values_map)
+
+    return out
 
 
 def get_name_from_attributes(variant, attributes):
