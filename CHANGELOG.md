@@ -1,6 +1,6 @@
 # Changelog
 
-## 2018-10-02
+## Version aee/2018.10.02
 - home page to display the `homepage_collection`
 - add `Product.get_quantity_available`
 - show "last piece" label
