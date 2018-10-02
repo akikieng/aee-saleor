@@ -126,3 +126,7 @@ webencodings==0.5.1       # via html5lib, tinycss2
 wrapt==1.10.11            # via vcrpy
 xmltodict==0.11.0         # via django-payments
 yarl               # via vcrpy
+
+
+# akikieng (shadi) additions
+django-payments-cod==0.1.3
