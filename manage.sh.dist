@@ -1,0 +1,8 @@
+#!/bin/sh
+export SECRET_KEY=secret
+export DATABASE_URL=postgres://user:pass@localhost:5432/dbname
+export ALLOWED_HOSTS=saleor.domain.com
+export EMAIL_URL=smtp://apikey:secretapi@smtp.sendgrid.com:465/?ssl=True
+export DEFAULT_FROM_EMAIL=from@email.com
+export DEBUG=True
+python manage.py $@

@@ -20,8 +20,9 @@ class VariantChoiceField(forms.ModelChoiceField):
         price = price.gross if self.display_gross else price.net
         label = pgettext_lazy(
             'Variant choice field label',
-            '%(variant_label)s - %(price)s') % {
-                'variant_label': variant_label, 'price': amount(price)}
+            '%(variant_label)s - %(price)s x %(qty)s in stock') % {
+                    'variant_label': variant_label, 'price': amount(price),
+                    'qty': obj.quantity_available}
         return label
 
     def update_field_data(self, variants, discounts, taxes):

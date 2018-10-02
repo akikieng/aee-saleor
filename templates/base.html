@@ -96,10 +96,12 @@
                 </li>
               {% endif %}
             {% else %}
+              {% comment %}
               <li>
                 <a rel="nofollow" href="{% url "account:signup" %}">
                   {% trans "Register" context "Main navigation item" %}</a>
               </li>
+              {% endcomment %}
               <li>
                 <a rel="nofollow" href="{% url "account:login" %}">
                   {% trans "Log in" context "Main navigation item" %}
@@ -143,6 +145,8 @@
             {% endif %}
           </div>
           <div class="col-2 col-md-4">
+	    &nbsp;
+	    {% comment %}
             <div class="navbar__brand__cart float-right">
               <a rel="nofollow" class="cart__icon" href="{% url "cart:index" %}">
                 <span class="cart-label d-none d-md-inline-block">
@@ -162,6 +166,7 @@
               <div class="cart-dropdown d-none">
                 {% include 'cart_dropdown.html' %}
               </div>
+	      {% endcomment %}
             </div>
           </div>
         </div>
@@ -203,11 +208,13 @@
         </div>
         <div class="col-md-3 col-sm-6">
           <ul>
+            {% comment %}
             <li>
               <a rel="nofollow" href="{% url "cart:index" %}">
                 {% trans "Your Cart" context "Main navigation item" %}
               </a>
             </li>
+            {% endcomment %}
             {% if user.is_authenticated %}
               {% if user.is_staff %}
                 <li>
@@ -215,11 +222,13 @@
                     {% trans "Dashboard" context "Main navigation item" %}
                   </a>
                 </li>
+                {% comment %}
                 <li>
                   <a href="{% url "styleguide" %}" target="_blank">
                     {% trans "Style guide" context "Main navigation item" %}
                   </a>
                 </li>
+                {% endcomment %}
               {% endif %}
               <li>
                 <a href="{% url "account:details" %}">
@@ -239,11 +248,13 @@
                 </li>
               {% endif %}
             {% else %}
+              {% comment %}
               <li>
                 <a rel="nofollow" href="{% url "account:signup" %}">
                   {% trans "Register" context "Main navigation item" %}
                 </a>
               </li>
+              {% endcomment %}
               <li>
                 <a rel="nofollow" href="{% url "account:login" %}">
                   {% trans "Log in" context "Main navigation item" %}
@@ -253,12 +264,13 @@
           </ul>
         </div>
         <div class="col-md-3 col-sm-12">
-          <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/mirumeelabs/">
+          <a target="_blank" rel="noopener" class="social-footer" href="https://www.facebook.com/zurn.akiki/">
             <svg data-src="{% static "images/facebook-logo.svg" %}" width="45px" height="45px"/>
           </a>
-          <a target="_blank" rel="noopener" class="social-footer" href="https://github.com/mirumee/saleor">
+          <a target="_blank" rel="noopener" class="social-footer" href="https://github.com/akikieng">
             <svg data-src="{% static "images/github-logo.svg" %}" width="45px" height="45px"/>
           </a>
+          {% comment %}
           <a target="_blank" rel="noopener" class="social-footer" href="https://twitter.com/getsaleor">
             <svg data-src="{% static "images/twitter-logo.svg" %}" width="45px" height="45px"/>
           </a>
@@ -277,6 +289,7 @@
           <a target="_blank" rel="noopener" class="social-footer" href="https://www.instagram.com/explore/tags/mirumee/">
             <svg data-src="{% static "images/instagram-logo.svg" %}" width="45px" height="45px"/>
           </a>
+          {% endcomment %}
         </div>
       </div>
     </div>

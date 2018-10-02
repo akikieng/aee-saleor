@@ -163,6 +163,7 @@ export default observer(class VariantPicker extends Component {
             <button
               className={addToCartBtnClasses}
               onClick={this.handleAddToCart}
+              style={{"display":"none"}}
               disabled={disableAddToCart}>
               {pgettext('Product details primary action', 'Add to cart')}
             </button>

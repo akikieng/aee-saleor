@@ -29,6 +29,7 @@ export default class QuantityInput extends Component {
           name="quantity"
           onChange={this.props.handleChange}
           type="number"
+          style={{"display":"none"}}
         />
         {errors && (
           <span className="help-block">{errors.join(' ')}</span>

@@ -2,6 +2,7 @@
 {% load i18n %}
 
 {% block content %}
+  {% comment %}
   <div class="home">
     <div class="row">
       <div class="col-sm-12 home__block1">
@@ -46,6 +47,7 @@
         </div>
       </div>
     </div>
+    {% endcomment %}
     {% if products %}
       <div class="home__featured">
         <h2 class="text-center">{% trans "Featured products" context "Homepage title" %}</h2>
