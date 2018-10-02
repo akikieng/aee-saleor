@@ -78,6 +78,11 @@
                     {% trans "Dashboard" context "Main navigation item" %}
                   </a>
                 </li>
+                <!-- allow staff users can register new users -->
+                <li>
+                  <a rel="nofollow" href="{% url "account:signup" %}">
+                    {% trans "Register" context "Main navigation item" %}</a>
+                </li>
               {% endif %}
               <li>
                 <a href="{% url "account:details" %}">

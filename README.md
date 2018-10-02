@@ -25,3 +25,15 @@ Fork was from master branch around commit ae91ff4 (i.e. after tag `v2018.08`)
 ## Changelog
 
 Check [[CHANGELOG.md]]
+
+
+## User management
+
+One of the things that I changed in saleor in this fork is that
+only a registered and logged in staff user can register another
+staff user.
+
+The initial one can be created with django's `createsuperuser` command.
+
+The rest can be done via the `register` link at the top of the 
+storefront (near `log out`)

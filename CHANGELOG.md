@@ -10,6 +10,7 @@
   - (label for "quantity to add to cart" which was hidden yesterday)
 - show for staff in product details the qty available for each variant
 - add `django.contrib.admin`
+- only logged in staff users can register new staff users
 
 
 ## 2018-10-01
