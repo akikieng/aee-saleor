@@ -12,8 +12,9 @@
           <div class="home--content">
             <div class="home--content-wrapper">
               <div class="home--content-inner">
+                  <h1>{% trans "Bazaar 2018" context "Homepage title" %}</h1>
                   <a class="btn btn-secondary home__button" href="{{homepage_collection.get_absolute_url}}">
-                    {% trans "Bazaar 2018" context "Homepage action" %}
+                    {% trans "Shop now" context "Homepage action" %}
                   </a>
                 </h1>
               </div>
@@ -24,20 +25,24 @@
     </div>
     {% endif %}
     {% endwith %}
-    {% comment %}
     <div class="row">
+      {% if collection_other %}
       <div class="col-sm-12 col-md-6 home__block2">
         <div class="home--square">
           <div class="home--content">
             <div class="home--content-wrapper">
               <div class="home--content-inner">
-                <h1>{% trans "Size & Colours" context "Homepage title" %}</h1>
-                <a class="btn btn-secondary home__button" href="#">{% trans "Shop now" context "Homepage action" %}</a>
+                <h1>{% trans "Other items" context "Homepage title" %}</h1>
+                <a class="btn btn-secondary home__button" href="{{collection_other.get_absolute_url}}">
+                  {% trans "Shop now" context "Homepage action" %}
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {% endif %}
+      {% comment %}
       <div class="col-sm-12 col-md-6 home__block3">
         <div class="home--square">
           <div class="home--content">
@@ -49,8 +54,8 @@
             </div>
           </div>
         </div>
+        {% endcomment %}
       </div>
-      {% endcomment %}
     </div>
     {% if products %}
       <div class="home__featured">

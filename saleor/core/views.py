@@ -10,6 +10,7 @@ from ..dashboard.views import staff_member_required
 from ..product.utils import products_for_homepage
 from ..product.utils.availability import products_with_availability
 from ..seo.schema.webpage import get_webpage_schema
+from ..product.models import Collection
 
 
 def home(request):
@@ -19,11 +20,14 @@ def home(request):
         products, discounts=request.discounts, taxes=request.taxes,
         local_currency=request.currency))
     webpage_schema = get_webpage_schema(request)
+    collection_other = Collection.objects.get(name='Other')
     return TemplateResponse(
         request, 'home.html', {
             'parent': None,
             'products': products,
-            'webpage_schema': json.dumps(webpage_schema)})
+            'webpage_schema': json.dumps(webpage_schema),
+            'collection_other': collection_other,
+          })
 
 
 @staff_member_required

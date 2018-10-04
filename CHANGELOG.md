@@ -1,5 +1,15 @@
 # Changelog
 
+
+Legend
+- TODO
+
+
+## Version aee/2018.10.04
+- add "Other" collection to home page
+  - TODO probably a good idea to have a carousel of categories: water filters, drains, ...
+
+
 ## Version aee/2018.10.02
 - home page to display the `homepage_collection`
 - add `Product.get_quantity_available`
