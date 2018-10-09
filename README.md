@@ -3,14 +3,11 @@ Forked from https://github.com/mirumee/saleor and modified as needed
 
 Original readme file from fork available at [[README-upstream.md]]
 
-Moved to saleor from django-oscar after oscar's open issues
-- [ Price won't update when selecting variants. #2139 ](https://github.com/django-oscar/django-oscar/issues/2139)
-- [ Better variant product support #675 ](https://github.com/django-oscar/django-oscar/issues/675)
-  - opened in 2013, and still open in 2018
-  - [ ace-han comment on Jun 19](https://github.com/django-oscar/django-oscar/issues/675#issuecomment-398478730) pointed me in saleor's direction
-  - sign of a bit of technical debt?
+Deployed at https://bazaar.akikieng.com
 
-Fork was from master branch around commit ae91ff4 (i.e. after tag `v2018.08`)
+Also deployed at a mirror snapshot.
+It is static though, yet still useful if the live site is not online.
+Check https://bitbucket.org/akikieng/bazaar.akikieng.com-snapshot-anonymous for more details
 
 
 ## Installation
@@ -37,3 +34,15 @@ The initial one can be created with django's `createsuperuser` command.
 
 The rest can be done via the `register` link at the top of the 
 storefront (near `log out`)
+
+
+## Move from django-oscar to saleor
+
+Moved to saleor from django-oscar after oscar's open issues
+- [ Price won't update when selecting variants. #2139 ](https://github.com/django-oscar/django-oscar/issues/2139)
+- [ Better variant product support #675 ](https://github.com/django-oscar/django-oscar/issues/675)
+  - opened in 2013, and still open in 2018
+  - [ ace-han comment on Jun 19](https://github.com/django-oscar/django-oscar/issues/675#issuecomment-398478730) pointed me in saleor's direction
+  - sign of a bit of technical debt?
+
+Fork was from master branch around commit ae91ff4 (i.e. after tag `v2018.08`)
