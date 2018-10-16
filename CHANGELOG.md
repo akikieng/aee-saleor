@@ -5,6 +5,10 @@ Legend
 - TODO
 
 
+## Version aee/2018.10.16
+- add management command `export_qty`
+
+
 ## Version aee/2018.10.04
 - add "Other" collection to home page
   - TODO probably a good idea to have a carousel of categories: water filters, drains, ...
